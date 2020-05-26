@@ -48,7 +48,7 @@ class NewUser extends Component{
             id='email'
             placeholder='Email'
             variant='outlined'
-            fullWidth='true'
+            fullWidth={true}
             type='email'
             onChange={this.handleChange}>
               placeholder
@@ -59,14 +59,14 @@ class NewUser extends Component{
               id='password'
               placeholder='Password'
               variant='outlined'
-              fullWidth='true'
+              fullWidth={true}
               onChange={this.handleChange}>
                 placeholder
             </TextField>
           </Grid>
           <Grid item xs={2}></Grid>
           <Grid item xs={8}>
-            <Button fullWidth='true'
+            <Button fullWidth={true}
               variant="contained"
               color="primary"
               onClick={this.signup}
@@ -77,7 +77,7 @@ class NewUser extends Component{
           <Grid item xs={2}></Grid>
           <Grid item xs={12}>
             <Button variant='text'
-              fullWidth='true'
+              fullWidth={true}
               onClick={() => this.redirect('/login')}>
               Sign in instead
             </Button>
