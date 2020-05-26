@@ -3,14 +3,14 @@ import 'firebase/auth'
 import 'firebase/firestore'
 
 const config = {
-    apiKey: "AIzaSyBnvj2KmNzTl53zKzSBbeG5N2oN057gL_A",
-    authDomain: "archcity-cmr.firebaseapp.com",
-    databaseURL: "https://archcity-cmr.firebaseio.com",
-    projectId: "archcity-cmr",
-    storageBucket: "archcity-cmr.appspot.com",
-    messagingSenderId: "842459017715",
-    appId: "1:842459017715:web:a1f6578ed20709da00e286",
-    measurementId: "G-9F3PNWJKSS"
+    apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+    authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
+    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 }
 
 firebase.initializeApp(config)
