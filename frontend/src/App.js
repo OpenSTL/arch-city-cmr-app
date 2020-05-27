@@ -7,12 +7,13 @@ import {
 } from "react-router-dom";
 
 import { AuthProvider } from './data/authContext';
-import {routes} from './data/routes'
+import {routes, PrivateRoute} from './data/routes'
 
 // Page components:
 import Header from './components/displays/header'
 import Footer from './components/displays/footer'
 import NoMatch from './pages/noMatch';
+import dashboard from './pages/dashboard';
 
 import ScrollToTop from './components/logic/scrollToTop'
 
@@ -33,6 +34,7 @@ export default function App() {
         <ScrollToTop />
 
         <Switch>
+          <PrivateRoute exact path="/application" component={dashboard} />
           {routes.map((route) => (
             <Route 
               exact path={route.path} 
