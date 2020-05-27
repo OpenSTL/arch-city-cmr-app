@@ -1,43 +1,44 @@
-import React, {Component} from 'react';
-import { TextField, Grid, Button, Paper} from '@material-ui/core';
-import { withRouter } from 'react-router-dom';
+import React, {useCallback, useContext, useState} from 'react';
+import { TextField, Grid, Button, Paper } from '@material-ui/core';
+import { withRouter, Redirect } from 'react-router-dom';
 import { fire } from '../data/firebase'
+import {AuthContext} from '../data/authContext'
 
-class NewUser extends Component{
-  state = {
+const NewUser = ({ history }) => {
+  const [state, setState] = useState({
     email: '',
-    password: '',
-    errorMessageLogin: '',
-    errorMessageSignup: ''
+    password: '' 
+  })
+
+  const handleChange = e => {
+    const {id , value} = e.target
+    setState( (prev) => ({
+      ...prev,  
+      [id] : value
+    }))
   }
 
+  const handleCreateUser = useCallback(
+    async event => {
+      event.preventDefault();
+      try {
+        console.log(state)
+        await fire
+        .auth()
+        .createUserWithEmailAndPassword(state.email, state.password)
+        history.push("/application");
+      } catch (error) {
+        alert(error.message);
+      }
+    },
+    [history, state]
+  );
 
-  signup = e => {
-    e.preventDefault();
-    fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-    .then((u) => {
-      // db.collection(u.user.uid).doc('1')
-    })
-    .catch((error) => {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        this.setState({errorMessageSignup: errorMessage})
-        console.log(errorCode + ': ' + errorMessage)
-       
-    });
-       
-  };
+  const { currentUser } = useContext(AuthContext);
 
-  handleChange = e => {
-    this.setState({[e.target.id]: e.target.value})
+  if (currentUser) {
+    return <Redirect to="/" />;
   }
-
-  redirect(path){
-    this.props.history.push(path)
-  }
-  
-  render(){
 
 	return (
     <Paper className='new-user'
@@ -50,7 +51,7 @@ class NewUser extends Component{
             variant='outlined'
             fullWidth={true}
             type='email'
-            onChange={this.handleChange}>
+            onChange={handleChange}>
               placeholder
           </TextField>
           </Grid>
@@ -60,7 +61,7 @@ class NewUser extends Component{
               placeholder='Password'
               variant='outlined'
               fullWidth={true}
-              onChange={this.handleChange}>
+              onChange={handleChange}>
                 placeholder
             </TextField>
           </Grid>
@@ -69,7 +70,7 @@ class NewUser extends Component{
             <Button fullWidth={true}
               variant="contained"
               color="primary"
-              onClick={this.signup}
+              onClick={handleCreateUser}
               >
               Create User
             </Button>
@@ -78,14 +79,13 @@ class NewUser extends Component{
           <Grid item xs={12}>
             <Button variant='text'
               fullWidth={true}
-              onClick={() => this.redirect('/login')}>
+              onClick={() => history.push('/login')}>
               Sign in instead
             </Button>
           </Grid>
         </Grid>
       </Paper>
     );
-  };
 };
 
 export default withRouter(NewUser);

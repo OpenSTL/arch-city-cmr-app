@@ -5,34 +5,33 @@ import { fire } from '../data/firebase'
 import {AuthContext} from '../data/authContext'
 
 const Login = ({ history }) => {
-  const [state, updateState] = useState({
+  const [state, setState] = useState({
     email: '',
     password: '' 
   })
 
   const handleChange = e => {
-    const {name , value} = e.target
-    updateState( prevState => ({
-        ...prevState,
-        [name] : value
+    const {id , value} = e.target
+    setState( (prev) => ({
+      ...prev,  
+      [id] : value
     }))
   }
   const handleLogin = useCallback(
     async event => {
       event.preventDefault();
       try {
+        console.log(state)
         await fire
           .auth()
           .signInWithEmailAndPassword(state.email, state.password);
-        history.push("/");
+        history.push("/application");
       } catch (error) {
-        alert(error);
+        alert(error.message);
       }
     },
-    [history]
+    [history, state]
   );
-
-  
 
   const { currentUser } = useContext(AuthContext);
 
@@ -82,7 +81,7 @@ const Login = ({ history }) => {
             <Grid item xs={6}>
               <Button variant='text'
                 fullWidth={true}
-                onClick={() => { return(<Redirect to="/newuser" />)}}>
+                onClick={() => {history.push('/newuser')}}>
                 Create Account
               </Button>
             </Grid>
