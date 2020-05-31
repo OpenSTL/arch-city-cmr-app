@@ -55,7 +55,6 @@ export const headerRoutes = [
         label: 'Application',
         component: dashboard
       })
-      console.log('done')
     }
 
     return (
