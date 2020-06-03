@@ -67,7 +67,7 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "post-deploy-cmd": [
+        "pre-install-cmd": [
             "chmod -R 755 bootstrap\\\/cache",
             "@php artisan cache:clear"
         ]
