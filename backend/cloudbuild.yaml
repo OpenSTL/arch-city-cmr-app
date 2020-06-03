@@ -9,6 +9,7 @@ steps:
 #   dir: "backend/"
 - name: "gcr.io/cloud-builders/gcloud"
   args: [
+    "--project=arch-city-test",
     "kms",
     "decrypt",
     "--location=global",
