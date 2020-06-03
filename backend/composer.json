@@ -57,6 +57,13 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "pre-install-cmd": [
+            "@php artisan route:clear",
+            "@php artisan view:clear",
+            "@php artisan config:clear",
+            "@php artisan cache:clear",
+            "@php artisan optimize:clear"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
