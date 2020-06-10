@@ -41,7 +41,7 @@ class Prequestionnaire extends Component{
         </div>
         <div className='odd'>
             <div className='question-main'>
-                <div className="inline-text">2) If the offense you want expunged is related to a felony offense, has it been less than 7 years since you </div>
+                <div className="inline-text">2) If the offense you want expunged is related to a felony offense, has it been less than 7 years since you: </div>
                 <div className="inline-text"><div className="prelim-clarity-text">(only one will apply)</div></div>
                 <div className="inline-text"><Tooltip title="At the time the petition is filed, it has been at least seven years if the offense is a felony...from the date the petitioner completed any authorized disposition imposed... RSMo § 610.140.5 (1)"><div className='hover-text'>  [FELONY WAITING PERIOD § 610.140.5 (1)] </div></Tooltip></div> 
             </div>         
@@ -53,7 +53,7 @@ class Prequestionnaire extends Component{
         </div>
         <div className='even'>
             <div className='question-main'>
-                <div className="inline-text">3) If the offense you want expunged is related to a misdemeanor or ordinance violation (municipal offense), has it been less than 3 years since you </div> 
+                <div className="inline-text">3) If the offense you want expunged is related to a misdemeanor or ordinance violation (municipal offense), has it been less than 3 years since you: </div> 
                 <div className="inline-text"><div className="prelim-clarity-text">(only one will apply)</div></div>
                 <div className="inline-text"><Tooltip title="At the time the petition is filed, it has been at least...three years if the offense is a misdemeanor, municipal offense, or infraction from the date the petitioner completed any authorized disposition imposed... RSMo § 610.140.5 (1)"><div className='hover-text'>  [NON-FELONY WAITING PERIOD § 610.140.5 (1)] </div></Tooltip></div>
             </div>         
