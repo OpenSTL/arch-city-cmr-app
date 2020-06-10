@@ -17,7 +17,7 @@ class Prequestionnaire extends Component{
                 Preliminary Questionnaire
             </div>
             <div className='prelim-subtext'> 
-                Answering yes to any of the following questions may indicate you are not a candidate for services. You are free to proceed to application.
+                Answering yes(change color) to any of the following questions may indicate you are not(same color as yes) a candidate for services. You are free to still apply to application.
             </div>
           </div>
         </div>

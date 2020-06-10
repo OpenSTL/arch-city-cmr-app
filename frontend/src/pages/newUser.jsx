@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Box, TextField, Grid, Button, Paper} from '@material-ui/core';
+import { TextField, Grid, Button, Paper} from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
 import { fire } from '../data/firebase'
 

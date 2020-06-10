@@ -23,6 +23,7 @@ h5 { font-size: 16px; }
 body{
     background-color: #ffffff;
     overflow: overlay;
+    min-height: 100vh;
 }
 
 body::-webkit-scrollbar {
@@ -64,9 +65,10 @@ body::-webkit-scrollbar {
 
 .footer  { 
     background-color: rgb(14, 33, 44);
-    width:110%;
+    width:100%;
     color: #ffffff;
     padding: 16px;
+    position: sticky;
 }
 
 /* Generic classes */

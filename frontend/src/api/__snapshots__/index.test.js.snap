@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api createApplicant should POST to applicants/add and return result 1`] = `
+Object {
+  "body": "{}",
+  "headers": Object {
+    "Authorization": "Bearer mytoken",
+  },
+  "method": "POST",
+}
+`;

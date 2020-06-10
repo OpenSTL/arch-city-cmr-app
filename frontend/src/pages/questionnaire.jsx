@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button} from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import RecordComponent from '../components/displays/qRecordType';
 import AppliedInquiryComponent from '../components/displays/appliedInquirySelect';
 import GrantedInquiryComponent from '../components/displays/grantedInquirySelect';
@@ -16,19 +16,19 @@ class Questionnaire extends Component{
 
   render(){
     const seekingRecords = [],stlRecords=[],missouriRecords=[],usRecords=[],nonusRecords=[];
-    for (var i = 0; i < this.state.numSeekingRecords+1; i += 1){
+    for (let i = 0; i < this.state.numSeekingRecords+1; i += 1){
       seekingRecords.push(<RecordComponent key={i} number={i} />);
     };
-    for (var i = 0; i < this.state.numStlRecords; i += 1){
+    for (let i = 0; i < this.state.numStlRecords; i += 1){
       stlRecords.push(<RecordComponent key={i} number={i} />);
     };
-    for (var i = 0; i < this.state.numMissouriRecords; i += 1){
+    for (let i = 0; i < this.state.numMissouriRecords; i += 1){
       missouriRecords.push(<RecordComponent key={i} number={i} />);
     };
-    for (var i = 0; i < this.state.numUSRecords; i += 1){
+    for (let i = 0; i < this.state.numUSRecords; i += 1){
       usRecords.push(<RecordComponent key={i} number={i} />);
     };
-    for (var i = 0; i < this.state.numNonUSRecords; i += 1){
+    for (let i = 0; i < this.state.numNonUSRecords; i += 1){
       nonusRecords.push(<RecordComponent key={i} number={i} />);
     };
 

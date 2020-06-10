@@ -58,7 +58,7 @@ const routes = [
 const headerRoutes = [
   {
     path: '/application',
-    label: 'Dashboard',
+    label: 'Application',
     component: dashboard
   },
   {
