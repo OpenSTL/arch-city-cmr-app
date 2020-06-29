@@ -4,7 +4,7 @@ import {KeyboardDatePicker,MuiPickersUtilsProvider} from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 import Grid from '@material-ui/core/Grid';
 
-export default function InquiryComponent() {
+export default function AppliedInquiryComponent() {
     
     const [inquiry, setRecordType] = React.useState('');
     const handleInquiry = (event) => {
@@ -47,7 +47,7 @@ function ContinueInquiry(){
     }
     return(
         <div style={{padding: 8}}>
-            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <MuiPickersUtilsProvider utils={DateFnsUtils}> 
             <Grid container spacing={3}>
                 <Grid item xs={4}>
                     <div>Date (if known)</div>

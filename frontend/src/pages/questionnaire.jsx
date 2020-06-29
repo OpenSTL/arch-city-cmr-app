@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import { Button} from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import RecordComponent from '../components/displays/qRecordType';
-import InquiryComponent from '../components/displays/inquirySelect';
+import AppliedInquiryComponent from '../components/displays/appliedInquirySelect';
+import GrantedInquiryComponent from '../components/displays/grantedInquirySelect';
 
 
 class Questionnaire extends Component{
@@ -15,19 +16,19 @@ class Questionnaire extends Component{
 
   render(){
     const seekingRecords = [],stlRecords=[],missouriRecords=[],usRecords=[],nonusRecords=[];
-    for (var i = 0; i < this.state.numSeekingRecords+1; i += 1){
+    for (let i = 0; i < this.state.numSeekingRecords+1; i += 1){
       seekingRecords.push(<RecordComponent key={i} number={i} />);
     };
-    for (var i = 0; i < this.state.numStlRecords; i += 1){
+    for (let i = 0; i < this.state.numStlRecords; i += 1){
       stlRecords.push(<RecordComponent key={i} number={i} />);
     };
-    for (var i = 0; i < this.state.numMissouriRecords; i += 1){
+    for (let i = 0; i < this.state.numMissouriRecords; i += 1){
       missouriRecords.push(<RecordComponent key={i} number={i} />);
     };
-    for (var i = 0; i < this.state.numUSRecords; i += 1){
+    for (let i = 0; i < this.state.numUSRecords; i += 1){
       usRecords.push(<RecordComponent key={i} number={i} />);
     };
-    for (var i = 0; i < this.state.numNonUSRecords; i += 1){
+    for (let i = 0; i < this.state.numNonUSRecords; i += 1){
       nonusRecords.push(<RecordComponent key={i} number={i} />);
     };
 
@@ -65,15 +66,15 @@ class Questionnaire extends Component{
             2) Have you ever been granted an expungement in Missouri?
           </div>
           <div>
-            <InquiryComponent/>
+            <GrantedInquiryComponent/>
           </div>
         </div>
         <div className='even'>
           <div className='question-main'>
-            3) Have you ever applied for an expungement in Missouri?
+            3) Have you ever applied for an expungement in Missouri that was not granted by the court?
           </div>
           <div>
-            <InquiryComponent/>
+            <AppliedInquiryComponent/>
           </div>
         </div>
         <div className='odd'>
@@ -81,15 +82,15 @@ class Questionnaire extends Component{
             4) Have you ever been granted an expungement anywhere other than Missouri?
           </div>
           <div>
-            <InquiryComponent/>
+            <GrantedInquiryComponent/>
           </div>
         </div>
         <div className='even'>
           <div className='question-main'>
-            5) Have you ever applied for an expungement anywhere other than Missouri?
+            5) Have you ever applied for an expungement anywhere other than Missouri that was not granted by the court?
           </div>
           <div>
-            <InquiryComponent/>
+            <AppliedInquiryComponent/>
           </div>
         </div>
         <div className='odd'>
@@ -109,6 +110,9 @@ class Questionnaire extends Component{
           </div>
           <div className='question-main'>b) Missouri (excluding St. Louis Region)</div>
           <div>
+            {missouriRecords}
+          </div>
+          <div>
             <Button variant='contained'
               fullWidth='false'
               onClick={() => this.setState({numMissouriRecords: this.state.numMissouriRecords + 1})}>
@@ -117,6 +121,9 @@ class Questionnaire extends Component{
           </div>
           <div className='question-main'>c) United States (excluding Missouri)</div>
           <div>
+            {usRecords}
+          </div>
+          <div>
             <Button variant='contained'
               fullWidth='false'
               onClick={() => this.setState({numUSRecords: this.state.numUSRecords + 1})}>
@@ -124,6 +131,9 @@ class Questionnaire extends Component{
             </Button>
           </div>
           <div className='question-main'>d) Outside of United States</div>
+          <div>
+            {nonusRecords}
+          </div>
           <div>
             <Button variant='contained'
               fullWidth='false'

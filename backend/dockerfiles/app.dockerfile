@@ -1,4 +1,11 @@
-FROM archcity/cmr-app:latest
+FROM php:7.4.7-apache-buster
+
+RUN apt-get update && apt-get install -y \
+    apt-utils libmcrypt-dev default-mysql-client libzip-dev \
+    libmagickwand-dev gnupg2 --no-install-recommends \
+    && docker-php-ext-install pdo_mysql gd zip \
+    && pecl install mcrypt \
+    && docker-php-ext-enable mcrypt
 
 COPY composer.lock composer.json /var/www/
 
@@ -16,13 +23,20 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer.phar install --no-scripts \
     && rm composer.phar
 
+EXPOSE 8080
+
+COPY dockerfiles/000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY . /var/www
+COPY .env /var/www/.env
 
 RUN chown -R www-data:www-data \
         /var/www/storage \
-        /var/www/bootstrap/cache
+        /var/www/bootstrap/cache && \
+        echo "Listen 8080" >> /etc/apache2/ports.conf && \
+        a2enmod rewrite
 
-RUN npm install \
-    && npm run prod
+RUN npm install --only=production \
+    && npm run prod \
+    && npm update
 
 RUN apt-get remove -y unzip npm

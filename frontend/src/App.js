@@ -6,85 +6,35 @@ import {
   Redirect
 } from "react-router-dom";
 
-import HeaderLink from './components/displays/headerLink'
-import ScrollToTop from './components/logic/scrollToTop'
+import { AuthProvider } from './data/authContext';
+import {routes, PrivateRoute} from './data/routes'
 
-import Info from './pages/info';
-import Questionnaire from './pages/questionnaire';
-import Login from './pages/login';
-import dashboard from './pages/dashboard';
+// Page components:
+import Header from './components/displays/header'
+import Footer from './components/displays/footer'
 import NoMatch from './pages/noMatch';
-import NewUser from './pages/newUser'
+import dashboard from './pages/dashboard';
+
+import ScrollToTop from './components/logic/scrollToTop'
 
 const homePath = '/';
 
-// Add new page components here:
-const routes = [
-  {
-    path: '/login',
-    label: 'Login',
-    component: Login
-  },
-  {
-    path: '/application',
-    label: 'Dashboard',
-    component: dashboard
-  },
-  {
-    path: '/info',
-    label: 'Info',
-    component: Info
-  },
-  {
-    path: '/questionnaire',
-    label: 'Questionnaire',
-    component: Questionnaire
-  },
-  {
-    path: '/newuser',
-    label: 'New User',
-    component: NewUser
-  }
-  
-]
 
-const headerRoutes = [
-  {
-    path: '/application',
-    label: 'Dashboard',
-    component: dashboard
-  },
-  {
-    path: '/info',
-    label: 'Info',
-    component: Info
-  },
-  {
-    path: '/questionnaire',
-    label: 'Questionnaire',
-    component: Questionnaire
-  }
-]
+
 
 export default function App() {
 
   return (
     <div className='app'>
+      <AuthProvider>
       <Router>
-        <div className='header'>
-          <h1>Clear My Missouri Record</h1>
-          <div align='center'>
-            {headerRoutes.map((route) => (
-              <HeaderLink 
-                activeOnlyWhenExact={true}
-                to={route.path}
-                label={route.label}
-              />
-            ))}
-          </div>
-        </div>
+
+        <Header/>
+
         <ScrollToTop />
+
         <Switch>
+          <PrivateRoute exact path="/application" component={dashboard} />
           {routes.map((route) => (
             <Route 
               exact path={route.path} 
@@ -98,10 +48,11 @@ export default function App() {
           />
           <Route component={NoMatch} />
         </Switch>
-        <div className='footer'>
-          <div className='footer-content'>footer placeholder</div>
-        </div>
+
+        <Footer/>
+        
       </Router>
+      </AuthProvider>
     </div>
   );
 }

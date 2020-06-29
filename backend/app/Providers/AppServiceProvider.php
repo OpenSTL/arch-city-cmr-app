@@ -11,6 +11,7 @@ use App\Observers\StatuteObserver;
 use App\Statute;
 use App\Observers\ApplicantObserver;
 use App\Observers\ConvictionObserver;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Validator;
@@ -35,6 +36,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        URL::forceScheme('https');
 	// This should resolve the error Specified key was too long error
         //   from https://laravel-news.com/laravel-5-4-key-too-long-error
         Schema::defaultStringLength(191);

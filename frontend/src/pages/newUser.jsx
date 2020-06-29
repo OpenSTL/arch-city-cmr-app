@@ -1,40 +1,76 @@
-import React, {Component} from 'react';
-import { Box, TextField, Grid, Button} from '@material-ui/core';
-import { withRouter } from 'react-router-dom';
+import React, {useCallback, useContext, useState} from 'react';
+import { TextField, Grid, Button, Paper } from '@material-ui/core';
+import { withRouter, Redirect } from 'react-router-dom';
+import { fire } from '../data/firebase'
+import {AuthContext} from '../data/authContext'
 
-class NewUser extends Component{
+const NewUser = ({ history }) => {
+  const [state, setState] = useState({
+    email: '',
+    password: '' 
+  })
 
-  redirect(path){
-    this.props.history.push(path)
+  const handleChange = e => {
+    const {id , value} = e.target
+    setState( (prev) => ({
+      ...prev,  
+      [id] : value
+    }))
   }
-  
-  render(){
+
+  const handleCreateUser = useCallback(
+    async event => {
+      event.preventDefault();
+      try {
+        console.log(state)
+        await fire
+        .auth()
+        .createUserWithEmailAndPassword(state.email, state.password)
+        history.push("/application");
+      } catch (error) {
+        alert(error.message);
+      }
+    },
+    [history, state]
+  );
+
+  const { currentUser } = useContext(AuthContext);
+
+  if (currentUser) {
+    return <Redirect to="/" />;
+  }
 
 	return (
-    <Box className='new-user'
-      border={1}>
+    <Paper className='new-user'
+      elevation={3}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
           <TextField className='login-box'
-            placeholder='Username'
+            id='email'
+            placeholder='Email'
             variant='outlined'
-            fullWidth='true'>
+            fullWidth={true}
+            type='email'
+            onChange={handleChange}>
               placeholder
           </TextField>
           </Grid>
           <Grid item xs={12}>
             <TextField className='login-box'
+              id='password'
               placeholder='Password'
               variant='outlined'
-              fullWidth='true'>
+              fullWidth={true}
+              onChange={handleChange}>
                 placeholder
             </TextField>
           </Grid>
           <Grid item xs={2}></Grid>
           <Grid item xs={8}>
-            <Button fullWidth='true'
+            <Button fullWidth={true}
               variant="contained"
               color="primary"
+              onClick={handleCreateUser}
               >
               Create User
             </Button>
@@ -42,15 +78,14 @@ class NewUser extends Component{
           <Grid item xs={2}></Grid>
           <Grid item xs={12}>
             <Button variant='text'
-              fullWidth='true'
-              onClick={() => this.redirect('/login')}>
+              fullWidth={true}
+              onClick={() => history.push('/login')}>
               Sign in instead
             </Button>
           </Grid>
         </Grid>
-      </Box>
+      </Paper>
     );
-  };
 };
 
 export default withRouter(NewUser);

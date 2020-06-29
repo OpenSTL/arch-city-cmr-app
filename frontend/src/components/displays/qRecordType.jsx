@@ -25,8 +25,9 @@ export default function RecordComponent() {
                                 <div className='inline-text'>If known, please indicate whether this record was {' '}</div>
                                 <div className='inline-text'><Tooltip title="Arrested, but did not (i) go to court or (ii) enter a plea agreement"><div className='hover-text'>arrest only </div></Tooltip></div>
                                 <div className='inline-text'>or a{' '}</div>
-                                <div className='inline-text'><Tooltip title="Plead or ruled guilty in court"><div className='hover-text'>conviction </div></Tooltip></div>
+                                <div className='inline-text'><Tooltip title="Plead or ruled guilty in court"><div className='hover-text'>*conviction  </div></Tooltip></div>
                                 <div className='inline-text' style = {{padding:'0px'}}>.</div>
+                                <div className='disclaimer-text'>*for the purpose of this form, also include charges that resulted in either a suspended imposition of sentence ("S.I.S.") or suspended execution of sentence ("S.E.S.")</div>
                             </div>
                             <Select value={recordType}
                                     onChange={handleRecordType}
