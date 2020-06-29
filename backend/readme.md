@@ -6,13 +6,66 @@ The Clear My Record backend is focused on providing a backend management solutio
 
 ## Deployment
 
+### Google Cloud Run
+
+#### Dependencies
+- gcloud
+- docker
+
+Currently this app is designed to be deployed via Google Cloud Run as a docker container.
+
+You can deploy the app by doing the following:
+
+Create a Google Cloud Project, or use an existing one. I recommend doing this via the UI at console.cloud.google.com
+as you will need to associate your project to a billing accout and also turn on the Cloud Run api
+
+Create a CloudSql MySql instance following the steps under **Create an Instance** here:
+https://cloud.google.com/sql/docs/mysql/quickstart
+
+Create an application key for the CMR app:
+`php artisan key:generate --show`
+
+Copy the .env.example file to a local .env file and add your newly generated key to it on the `APP VALUE=` line.
+
+Set the values for the base admin user in the .env file.
+
+Set the value of the database values in the .env file:
+
+`DB_CONNECTION=mysql`
+`DB_HOST=127.0.0.1`
+`DB_PORT=3306`
+`DB_DATABASE=<db_name>`
+`DB_USERNAME=<db_username>`
+`DB_PASSWORD=<db_password>`
+`DB_SOCKET=<instance_connection_name>`
+
+Set any other values in .env that you'd like to customize. Just the ones we did above should work to deploy the app
+
+Build the docker image locally from the backend directory:
+`docker build -f dockerfiles/app.dockerfile . -t openstl/arch-city-cmr:prod`
+
+Tag the docker image for your GCP project container registry:
+`docker tag openstl/arch-city-cmr:prod gcr.io/<project_name>/arch-city-cmr:prod`
+
+Push the docker image to the project container registry:
+`docker push gcr.io/<project_name>/arch-city-cmr:prod`
+
+Follow the steps to deploy a new service here:
+https://cloud.google.com/run/docs/deploying
+
+Follow the steps to attach your mysql instance to your service here:
+https://cloud.google.com/sql/docs/mysql/connect-run
+
+Once deployed, you should be able to reach your service at the url provided by Google
+
+
 ### App Engine
 
 #### Dependencies
 - gcloud
 - mysql client
 
-Currently this application is designed to be deploy via Google App Engine. You can deploy the app by doing the following:
+You can deploy the app to App Engine Flex environment by doing the following:
 
 Create a Google Cloud Project, or use an existing one. To do this via the gcloud cli:
 `gcloud projects create <project_name>`
@@ -47,7 +100,7 @@ Seed the Permission, User, and Statute databases:
 Deploy the application by running the following in the directory:
 `gcloud app deploy`
 
-### Docker Deployment
+### Docker-Compose Deployment (NOTE: THIS PORTION OF DOCS NEEDS UPDATED AS THE app.dockerfile IMAGE IS SET UP TO USE APACHE INSTEAD OF NGINX)
 
 #### Dependencies
 You will need the following dependencies:
