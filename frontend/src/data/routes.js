@@ -12,11 +12,7 @@ import {AuthContext} from './authContext'
 
 
 export const routes = [
-    {
-      path: '/login',
-      label: 'Login',
-      component: Login
-    },
+    
     {
       path: '/',
       label: 'Info',
@@ -27,17 +23,29 @@ export const routes = [
       label: 'Questionnaire',
       component: Questionnaire
     },
-    {
-      path: '/newuser',
-      label: 'New User',
-      component: NewUser
-    },
+    
     {
       path: '/prequestionnaire',
       label: 'Prequestionnaire',
       component: Prequestionnaire
+    },
+    {
+      path: "/application",
+      label: "Application",
+      component: dashboard
     }
   ]
+
+  // {
+  //   path: '/login',
+  //   label: 'Login',
+  //   component: Login
+  // },
+  // {
+  //   path: '/newuser',
+  //   label: 'New User',
+  //   component: NewUser
+  // },
 
 export const headerRoutes = [
   {
@@ -47,15 +55,8 @@ export const headerRoutes = [
   }
   ]
 
-  export const PrivateRoute = ({ component: Dashboard, ...rest }) => {
+  const PrivateRoute = ({ component: Dashboard, ...rest }) => {
     const {currentUser} = useContext(AuthContext);
-    if (!!currentUser) {
-      headerRoutes.push({
-        path: '/application',
-        label: 'Application',
-        component: dashboard
-      })
-    }
 
     return (
       <Route
