@@ -30,29 +30,29 @@
         },
         mounted() {
             if (this.isDefined(this.data.arrest_date)
-                && moment(String(this.data.arrest_date)).format('MM/DD/YYYY') != 'Invalid date') {
+                && moment(String(this.data.arrest_date), 'YYYY-MM-DD').format('MM/DD/YYYY') != 'Invalid date') {
                 this.date_name = 'Arrested';
-                this.date_display = moment(String(this.data.arrest_date)).format('MM/DD/YYYY');
-                this.date_from_now = moment(String(this.data.arrest_date)).fromNow(true);
+                this.date_display = moment(String(this.data.arrest_date), 'YYYY-MM-DD').format('MM/DD/YYYY');
+                this.date_from_now = moment(String(this.data.arrest_date), 'YYYY-MM-DD').fromNow(true);
             }
             if (this.isDefined(this.data.date_of_charge)
-                && moment(String(this.data.date_of_charge)).format('MM/DD/YYYY') != 'Invalid date') {
+                && moment(String(this.data.date_of_charge), 'YYYY-MM-DD').format('MM/DD/YYYY') != 'Invalid date') {
                 this.date_name = 'Charged';
-                this.date_display = moment(String(this.data.date_of_charge)).format('MM/DD/YYYY');
-                this.date_from_now = moment(String(this.data.date_of_charge)).fromNow(true);
+                this.date_display = moment(String(this.data.date_of_charge), 'YYYY-MM-DD').format('MM/DD/YYYY');
+                this.date_from_now = moment(String(this.data.date_of_charge), 'YYYY-MM-DD').fromNow(true);
             }
             if (this.isDefined(this.data.date_of_disposition)
-                && moment(String(this.data.date_of_disposition)).format('MM/DD/YYYY') != 'Invalid date') {
+                && moment(String(this.data.date_of_disposition), 'YYYY-MM-DD').format('MM/DD/YYYY') != 'Invalid date') {
                 this.date_name = 'Disposition';
-                this.date_display = moment(String(this.data.date_of_disposition)).format('MM/DD/YYYY');
-                this.date_from_now = moment(String(this.data.date_of_disposition)).fromNow(true);
+                this.date_display = moment(String(this.data.date_of_disposition), 'YYYY-MM-DD').format('MM/DD/YYYY');
+                this.date_from_now = moment(String(this.data.date_of_disposition), 'YYYY-MM-DD').fromNow(true);
             }
             if (this.isDefined(this.data.release_date)
-                && moment(String(this.data.release_date)).format('MM/DD/YYYY') != 'Invalid date') {
+                && moment(String(this.data.release_date), 'YYYY-MM-DD').format('MM/DD/YYYY') != 'Invalid date') {
                 this.date_is_release_date = true;
                 this.date_name = 'Released';
-                this.date_display = moment(String(this.data.release_date)).format('MM/DD/YYYY');
-                this.date_from_now = moment(String(this.data.release_date)).fromNow(true);
+                this.date_display = moment(String(this.data.release_date), 'YYYY-MM-DD').format('MM/DD/YYYY');
+                this.date_from_now = moment(String(this.data.release_date), 'YYYY-MM-DD').fromNow(true);
             }
         }
     }

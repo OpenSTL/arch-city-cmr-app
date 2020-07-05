@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="{{ asset('/img/icons/favicon.ico') }}">
 
-        <title>Laravel</title>
+        <title>Arch City CMS</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -81,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Clear My Record Backend
+                    Expungement Program Backend
                 </div>
             </div>
         </div>
