@@ -21,7 +21,7 @@
         computed: {
             display_date: function () {
                 if (this.value) {
-                    return moment(String(this.value)).format('MM/DD/YYYY');
+                    return moment(String(this.value), 'YYYY-MM-DD').format('MM/DD/YYYY');
                 } else {
                     return '';
                 }

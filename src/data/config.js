@@ -3,9 +3,8 @@ export const steps = [
     navName: 'What',
     headerText: 'What does Expungement mean?',
     bodyText: 
-    `<p>In Missouri, expungement is the legal process in which criminal records, like police reports and indictments, are sealed from state government records. </p>
-     <p>Expungement does not result in the record being erased or destroyed. There are ways in which the record may be accessed, e.g. applying for a nursing license.</p>
-     <p>Expungement does not remove any record or mention of the criminal activity from the public, e.g. a news article mentioning an arrest would not be changed.</p>
+    `<p>In Missouri, expungement is the legal process in which records relating to a particular crime are sealed from state government records by court order. However, there are certain exceptions that allow expunged records to be accessed by certain parties, e.g. applying for a nursing license.</p>
+     <p>Expungement does not result in the record being erased or destroyed. Expungement does not remove any mention of the criminal record from the public, e.g. a news article mentioning an arrest would not be changed. </p>
     `,
   },
   { 
@@ -13,9 +12,9 @@ export const steps = [
     headerText: 'Why Should I Remove My Record?',
     bodyText: 
     `<h3>Being granted an expungement:</h3> 
-    <p><ul><li>allows a person to answer “no” to certain inquiries of criminal records, e.g. job and housing applications.</li>
+    <p><ul><li>allows a person to answer “no” to certain inquiries of criminal records, e.g. employment.</li>
     <li>makes the records, as they exist within the state government, inaccessible to public view. </li>
-    <li>removes a few of the consequences caused by the criminal records, e.g. loss of right to carry a firearm</li></ul></p>
+    <li>removes a few of the consequences caused by criminal records, e.g. loss of eligibilty for federal student finnacial aid.</li></ul></p>
     `,
   },
   // {
@@ -41,9 +40,9 @@ export const steps = [
     navName: 'Eligibility',
     headerText: 'Can My Record Be Expunged?',
     bodyText: 
-    `<p>Records relating to some offenses can never be expunged. Ineligible crimes include: Class A felonies, dangerous felonies, offenses that require you to register as a sex offender, and any crime where death is an element. See full list of excluded offenses</p>
+    `<p>Records relating to some offenses can never be expunged. Ineligible crimes include: Class A felonies, dangerous felonies, offenses that require you to register as a sex offender, and any crime where death is an element. For the full list of ineligible offenses, violations, and infractions, see section 2 of RSMo 610.140</p>
      
-     <p>A certain amount of time must pass after the successful completion of all requirements of the case, including prison, jail, parole, probation, payment of restitution, etc.
+     <p>A certain amount of time must pass after the successful completion of all requirements of the sentence, including payment of restitution, times relating to prison, jail, parole, probation, etc.
      <ul><li>If your case involved a felony offense, you must wait seven years</li>
      <li>If your case involved a misdemeanor, you must wait three years</li>
      <li>If your case involved a municipal offense, you must wait three years</li></ul></p>
@@ -63,8 +62,7 @@ export const steps = [
     navName: 'Cost',
     headerText: 'Cost to Expunge a Record',
     bodyText: 
-    `<p>It costs $250 to file a petition to expunge a record.
-    <br>If you cannot afford the cost you can file an application to send in the petition for free.</p>
+    `<p>The cost to file a petition for expungement is $250. This fee may be waived upon showing that your financial circumstances establish the lack of ability to pay. The review of your financial circumstances may include your income, debts, family obligations, assets, and other matters relevant to establishing the lack of financial resources.</p>
     `,
   },
   { 
