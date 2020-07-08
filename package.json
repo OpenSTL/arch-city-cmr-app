@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "homepage": "http://OpenSTL.github.io/CMR-Client",
+  "homepage": "http://OpenSTL.github.io/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
