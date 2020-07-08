@@ -6,6 +6,7 @@ import Questionnaire from '../pages/questionnaire';
 import Login from '../pages/login';
 import dashboard from '../pages/dashboard';
 import NewUser from '../pages/newUser';
+import Release from '../pages/release';
 import Prequestionnaire from '../pages/prequestionnaire';
 
 import {AuthContext} from './authContext'
@@ -33,6 +34,11 @@ export const routes = [
       path: "/application",
       label: "Application",
       component: dashboard
+    },
+    {
+      path: "/release",
+      label: "Release",
+      component: Release
     }
   ]
 
