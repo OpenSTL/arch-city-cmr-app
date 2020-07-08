@@ -16,6 +16,7 @@ import dashboard from './pages/dashboard';
 import NoMatch from './pages/noMatch';
 import NewUser from './pages/newUser';
 import Prequestionnaire from './pages/prequestionnaire';
+import Release from './pages/release';
 
 import { Button } from '@material-ui/core';
 
@@ -52,7 +53,13 @@ const routes = [
     path: '/prequestionnaire',
     label: 'Prequestionnaire',
     component: Prequestionnaire
+  },
+  {
+    path: '/release',
+    label: 'Release',
+    component: Release
   }
+
 ]
 
 const headerRoutes = [
