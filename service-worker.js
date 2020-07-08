@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/arch-city-cmr-app/precache-manifest.713335e0ab855cebdf39abae7b0354e6.js"
+  "/arch-city-cmr-app/precache-manifest.01f86777e065aac088ed10ad3279d373.js"
 );
 
 self.addEventListener('message', (event) => {
