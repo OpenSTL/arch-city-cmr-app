@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.1424c324.chunk.css",
-    "main.js": "/static/js/main.0af820d6.chunk.js",
-    "main.js.map": "/static/js/main.0af820d6.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.784c586e.js",
-    "runtime-main.js.map": "/static/js/runtime-main.784c586e.js.map",
-    "static/js/2.8a381414.chunk.js": "/static/js/2.8a381414.chunk.js",
-    "static/js/2.8a381414.chunk.js.map": "/static/js/2.8a381414.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.11ce50286cd32576deb002de900f02a3.js": "/precache-manifest.11ce50286cd32576deb002de900f02a3.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.1424c324.chunk.css.map": "/static/css/main.1424c324.chunk.css.map",
-    "static/js/2.8a381414.chunk.js.LICENSE.txt": "/static/js/2.8a381414.chunk.js.LICENSE.txt",
-    "static/media/logo.png": "/static/media/logo.69b2987e.png"
+    "main.css": "/arch-city-cmr-app/static/css/main.992e3862.chunk.css",
+    "main.js": "/arch-city-cmr-app/static/js/main.7b29fc71.chunk.js",
+    "main.js.map": "/arch-city-cmr-app/static/js/main.7b29fc71.chunk.js.map",
+    "runtime-main.js": "/arch-city-cmr-app/static/js/runtime-main.d6a90b81.js",
+    "runtime-main.js.map": "/arch-city-cmr-app/static/js/runtime-main.d6a90b81.js.map",
+    "static/js/2.e2a6ebdb.chunk.js": "/arch-city-cmr-app/static/js/2.e2a6ebdb.chunk.js",
+    "static/js/2.e2a6ebdb.chunk.js.map": "/arch-city-cmr-app/static/js/2.e2a6ebdb.chunk.js.map",
+    "index.html": "/arch-city-cmr-app/index.html",
+    "precache-manifest.713335e0ab855cebdf39abae7b0354e6.js": "/arch-city-cmr-app/precache-manifest.713335e0ab855cebdf39abae7b0354e6.js",
+    "service-worker.js": "/arch-city-cmr-app/service-worker.js",
+    "static/css/main.992e3862.chunk.css.map": "/arch-city-cmr-app/static/css/main.992e3862.chunk.css.map",
+    "static/js/2.e2a6ebdb.chunk.js.LICENSE.txt": "/arch-city-cmr-app/static/js/2.e2a6ebdb.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/arch-city-cmr-app/static/media/logo.69b2987e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.784c586e.js",
-    "static/js/2.8a381414.chunk.js",
-    "static/css/main.1424c324.chunk.css",
-    "static/js/main.0af820d6.chunk.js"
+    "static/js/runtime-main.d6a90b81.js",
+    "static/js/2.e2a6ebdb.chunk.js",
+    "static/css/main.992e3862.chunk.css",
+    "static/js/main.7b29fc71.chunk.js"
   ]
 }
