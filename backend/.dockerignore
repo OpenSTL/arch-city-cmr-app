@@ -1,0 +1,15 @@
+./.git
+./.idea
+./node_modules
+./vendor
+./sttorage/logs/**
+./storage/oauth-private.key
+./storage/oauth-public.key
+*.dockerfile
+./app.yaml
+./app.yaml.flex
+./Homestead.yaml
+./test.py
+./.vagrant/
+./certs/
+./.env.example
