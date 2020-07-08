@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "homepage": "http://OpenSTL.github.io/",
+  "homepage": "http://openSTL.github.io/arch-city-cmr-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
