@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { AuthContext } from '../../data/authContext';
+// import { AuthContext } from '../../data/authContext';
 import {headerRoutes} from '../../data/routes'
 import { fire } from '../../data/firebase';
 
@@ -22,20 +22,20 @@ const useStyles = makeStyles({
 
 
 const Header = () => {
-    const { currentUser } = useContext(AuthContext);
+    // const { currentUser } = useContext(AuthContext);
 
-    const signout = () => {
-        fire.auth().signOut();
-        headerRoutes.splice(-1,1)
-    }
+    // const signout = () => {
+    //     fire.auth().signOut();
+    //     headerRoutes.splice(-1,1)
+    // }
 
-    if(!!currentUser){
-        headerRoutes.push({
-            path: '/application',
-            label: 'Application',
-            component: dashboard
-          })
-    }
+    // if(!!currentUser){
+    //     headerRoutes.push({
+    //         path: '/application',
+    //         label: 'Application',
+    //         component: dashboard
+    //       })
+    // }
     const classes = useStyles()
     return(
         <div className='header'>
