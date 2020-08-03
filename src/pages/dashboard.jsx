@@ -13,8 +13,6 @@ export default function dashboard() {
         <ExpansionPanel>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
-            
-            
           >
             <h3>Release and Waiver</h3>
           </ExpansionPanelSummary>
@@ -23,6 +21,10 @@ export default function dashboard() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
               sit amet blandit leo lobortis eget.
             </p>
+            <br/><br/><br/>
+             <Button href='/release'>
+              Go to Release
+            </Button>
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </div>
