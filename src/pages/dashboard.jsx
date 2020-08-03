@@ -22,7 +22,7 @@ export default function dashboard() {
               sit amet blandit leo lobortis eget.
             </p>
             <br/><br/><br/>
-             <Button href='/release'>
+            <Button href='/release'>
               Go to Release
             </Button>
           </ExpansionPanelDetails>
