@@ -58,7 +58,12 @@ export const headerRoutes = [
     path: '/',
     label: 'Info',
     component: Info
-  }
+  },
+  {
+    path: '/application',
+    label: 'Apply Now!',
+    component: dashboard
+  },
   ]
 
   const PrivateRoute = ({ component: Dashboard, ...rest }) => {
