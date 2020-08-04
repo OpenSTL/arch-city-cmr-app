@@ -62,7 +62,7 @@ export const steps = [
     navName: 'Cost',
     headerText: 'Cost to Expunge a Record',
     bodyText: 
-    `<p>The cost to file a petition for expungement is $250. This fee may be waived upon showing that your financial circumstances establish the lack of ability to pay. The review of your financial circumstances may include your income, debts, family obligations, assets, and other matters relevant to establishing the lack of financial resources.</p>
+    `<p>There is a fee you must pay to file your petition for expungement. This fee may be waived upon showing that your financial circumstances establish the lack of ability to pay. The review of your financial circumstances may include your income, debts, family obligations, assets, and other matters relevant to establishing the lack of financial resources.</p>
     `,
   },
   { 

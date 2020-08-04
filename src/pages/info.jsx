@@ -6,7 +6,7 @@ import Hidden from '@material-ui/core/Hidden';
 
 import { stepIDName } from '../css.js'
 
-const Steps = require("../data/config");
+const Steps = require("../data/info");
 
 export default function Info() {
   const [currentStepNumber, setCurrentStepNumber] = useState(1); // Hook for visible section state

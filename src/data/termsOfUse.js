@@ -14,7 +14,7 @@ export const termsInfo = [
     },
     { 
       bodyText: 
-        `<p>4)  The filing fee for the petition for expungement is $250, which you pay to the court. The program will not pay any filing fee for you and does not agree to pay application fees. If you cannot pay the $250, you may ask the court to waive the filing fee and costs in an affidavit and motion. 
+        `<p>4)  There is a fee you must pay to file your petition for expungement, which you pay to the court. The program will not pay any filing fee for you and does not agree to pay application fees. If you cannot pay the fee, you may ask the court to waive the filing fee and costs in an affidavit and motion. 
         </p>
         `,
     },
