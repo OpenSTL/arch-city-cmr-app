@@ -1,4 +1,5 @@
 # CMR-Client
+Site is hosted at https://arch-city-cmr.herokuapp.com/
 
 ## Getting Started
 - run "npm install" to download all dependencies.
