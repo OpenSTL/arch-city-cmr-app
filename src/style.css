@@ -47,6 +47,10 @@ body::-webkit-scrollbar {
 }
 
 .header  {  
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: center;
     width: 100vw;
     height: var(--header-height);
     top: 0;
@@ -57,6 +61,17 @@ body::-webkit-scrollbar {
     color: #ffffff;
     position: absolute;
     z-index: 2
+}
+.logo-container{
+    float: left;
+    width: 50%;
+}
+
+.nav-container{
+    align-content: center;
+    justify-content: center;
+    padding-top: 50px;
+    
 }
 
 .content {
