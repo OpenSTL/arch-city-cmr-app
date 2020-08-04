@@ -9,6 +9,7 @@ import NewUser from '../pages/newUser';
 import Release from '../pages/release';
 import Prequestionnaire from '../pages/prequestionnaire';
 import Terms from '../pages/terms';
+import App from '../pages/application'
 
 import {AuthContext} from './authContext'
 
@@ -34,7 +35,7 @@ export const routes = [
     {
       path: "/application",
       label: "Application",
-      component: dashboard
+      component: App
     },
     {
       path: "/release",

@@ -28,11 +28,13 @@ export default function App() {
     <div className='app'>
       {/* <AuthProvider> */}
       <Router>
-
+        <section>
         <Header/>
+        </section>
 
         <ScrollToTop />
 
+        <section>
         <Switch>
           {routes.map((route) => (
             <Route 
@@ -47,9 +49,7 @@ export default function App() {
           />
           <Route component={NoMatch} />
         </Switch>
-
-        <Footer/>
-        
+        </section>
       </Router>
       {/* </AuthProvider> */}
     </div>

@@ -77,6 +77,15 @@ body::-webkit-scrollbar {
 .content {
     margin: var(--header-height) 0 0 0;
 }
+#application{
+    margin: var(--header-height) 0 0 0;
+}
+
+.buttons-container{
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+}
 
 .bottom-spacer {
   height: 46vh;
