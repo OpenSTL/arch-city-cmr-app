@@ -13,9 +13,9 @@ Design Influences:
 
     ### How to edit content on this page!
     There are config files that have all the content in them. 
-        - src/data/info.js - This is the all of the content for the homepage/info page. 
-        - src/data/termsOfUse.js - This is all of the content for the terms section of the application. 
-        - src/data/waiver.js - This is all of the content for the release and waiver section of the application. 
+    - src/data/info.js - This is the all of the content for the homepage/info page. 
+    - src/data/termsOfUse.js - This is all of the content for the terms section of the application. 
+    - src/data/waiver.js - This is all of the content for the release and waiver section of the application. 
 
     Once you go to one of these files, each section is in the same order as they are on page. Headers and body texts are labeled. All content seen on the page are contained in either single or double quotes. Change anything within the quotation marks. 
 
