@@ -52,7 +52,7 @@ class ConvictionFormRequest extends FormRequest
             'notes' => 'nullable|string',
             'date_of_charge' => 'nullable|date',
             'release_date' => 'nullable|date',
-
+            'hours_worked_on_case' => 'nullable|numeric',
         ];
 
 //                if ($this->route('conviction')) {  // If ID we must be changing an existing record

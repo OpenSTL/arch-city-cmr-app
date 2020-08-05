@@ -15,6 +15,9 @@
         <div class="col-md-12" style="padding-bottom: 1.25em;">
             <dsp-textarea v-model="record.notes"></dsp-textarea>
         </div>
+        <div>
+            <span class="border-bottom border-dark"></span>
+        </div>
 
     </div>
 </template>

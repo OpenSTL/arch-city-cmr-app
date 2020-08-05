@@ -1,5 +1,4 @@
 @extends('layouts.master')
-@section('page-title', 'Arch City CMR')
 
 @section('content')
 <div class="container">

@@ -26,6 +26,9 @@
                 ></charges-show-list>
             </div>
         </div>
+        <div>
+            <span class="border-bottom border-dark"></span>
+        </div>
     </div>
 
 </template>

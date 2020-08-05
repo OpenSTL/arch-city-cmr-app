@@ -1,8 +1,7 @@
 <template>
     <div class="row">
         <div class="col-md-11">
-            <h4 style="display: inline-block"> {{ record.case_number }}, {{ record.court_city_county }}, {{ record.name }}</h4>
-            <span style="float: right">{{ mapNames(record.sources) }}</span>
+            <h4 style="display: inline-block"> Case Number: {{ record.case_number }} &nbsp; &nbsp; &nbsp; &nbsp; Court Location: {{ record.court_city_county }} &nbsp; &nbsp; &nbsp; &nbsp; Description: {{ record.name }}</h4>
         </div>
 
         <div class="col-md-1">

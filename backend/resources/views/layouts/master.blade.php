@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ asset('/img/icons/favicon.ico') }}">
     <link href="/css/app.css" rel="stylesheet">
-    <title>@yield('page-title', "Arch City CMS")</title>
+    <title>@yield('page-title', "Expungement Program")</title>
 
 </head>
 <body class="body-with-nav">

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="{{ asset('/img/icons/favicon.ico') }}">
 
-        <title>Arch City CMS</title>
+        <title>Expungement Program</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -82,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Expungement Program Backend
+                    Expungement Program
                 </div>
             </div>
         </div>

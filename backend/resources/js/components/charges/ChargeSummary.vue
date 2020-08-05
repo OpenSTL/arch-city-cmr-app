@@ -18,7 +18,9 @@
         </div>
 
         <div class="col-md-2">
-            {{ display_charge_eligibility }}
+            <h5>
+                {{ display_charge_eligibility }}
+            </h5>
         </div>
 
         <div class="col-md-1">

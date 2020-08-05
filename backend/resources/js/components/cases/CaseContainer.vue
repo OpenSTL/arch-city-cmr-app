@@ -1,10 +1,7 @@
 <template>
     <div>
         <div class="row">
-            <div class="col-md-1 text-center" style="padding-left: 1em">
-                <dsp-case-badge :data="record"/>
-            </div>
-            <div class="col-md-11">
+            <div class="col-md-12">
 
                 <div class=" charge-container">
                     <div v-if="view === 'summary'">
@@ -40,6 +37,9 @@
                             ></charges-list>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <span class="border-bottom border-dark"></span>
                 </div>
             </div>
         </div>

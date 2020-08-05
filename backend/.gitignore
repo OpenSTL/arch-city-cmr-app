@@ -1,2 +1,4 @@
 .env
 app.yaml
+composer.lock
+package-lock.json

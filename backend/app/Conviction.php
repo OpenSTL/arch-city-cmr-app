@@ -40,6 +40,7 @@ class Conviction extends Model
         'source',
         'created_by',
         'modified_by',
+        'hours_worked_on_case',
     ];
 
     public function applicant()

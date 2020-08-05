@@ -1,10 +1,10 @@
 <template>
     <div>
         <span v-if="date_is_release_date == true">
-            {{ date_name }}<br><span style="font-weight: bolder; font-size: x-large">{{date_from_now}}</span>
+            {{ date_name }}<br><span style="font-weight: bolder; font-size: medium">{{date_from_now}}</span>
         </span>
         <span v-else style="color: gray">
-            {{ date_name }}<br><span style="font-weight: bolder; font-size: x-large">{{date_from_now}}</span>
+            {{ date_name }}<br><span style="font-weight: bolder; font-size: medium">{{date_from_now}}</span>
         </span>
     </div>
 </template>

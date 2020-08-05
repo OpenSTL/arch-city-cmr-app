@@ -81,7 +81,7 @@
 
                         <div class="col-md-12">
                             <std-form-group
-                                    label="Date of Charge "
+                                    label="Date of Charge"
                                     label-for="date_of_charge"
                                     :errors="form_errors.date_of_charge"
 
@@ -94,6 +94,21 @@
                                         style="width: 10em"/>
                             </std-form-group>
                         </div>
+
+                        <div class="col-md-12">
+                            <std-form-group
+                                label="Hours Worked on Case"
+                                label-for="hours_worked_on_case"
+                                :errors="form_errors.hours_worked_on_case"
+
+                            >
+                                <fld-input name="hours_worked_on_case" v-model="record.hours_worked_on_case"/>
+                                <template slot="help">
+                                    Total hours worked on this case. Add to any current values present
+                                </template>
+                            </std-form-group>
+                        </div>
+
 
                         <!--<div class="col-md-12">-->
                         <!--<std-form-group-->
@@ -294,6 +309,7 @@
                     record_name: false,
                     release_status: false,
                     release_date_text: false,
+                    hours_worked_on_case: false,
                     notes: false,
                     date_of_charge: false,
                     release_date: false,
