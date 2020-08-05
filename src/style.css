@@ -2,6 +2,11 @@
   --header-height: 100px;
   --error-color: #ec8e75;
   --good-color: #82a18f;
+
+  --acd-green: #648d42;
+  --acd-blue: #083350;
+  --acd-gray: #ebebeb;
+  
 }
 
 html, body, div { padding: 0px; margin: 0px; }
@@ -47,20 +52,44 @@ body::-webkit-scrollbar {
 }
 
 .header  {  
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: center;
     width: 100vw;
     height: var(--header-height);
     top: 0;
     left: 0;
     padding-left: 16px;
     padding-right: 16px;
-    background-color: rgb(14, 33, 44);
+    background-color: #648d42;
     color: #ffffff;
     position: absolute;
     z-index: 2
 }
+.logo-container{
+    float: left;
+    width: 50%;
+}
+
+.nav-container{
+    align-content: center;
+    justify-content: center;
+    padding-top: 50px;
+    
+}
 
 .content {
     margin: var(--header-height) 0 0 0;
+}
+#application{
+    margin: var(--header-height) 0 0 0;
+}
+
+.buttons-container{
+    justify-content: center;
+    align-content: center;
+    margin: auto;
 }
 
 .bottom-spacer {
@@ -148,7 +177,7 @@ body::-webkit-scrollbar {
 }
 
 .navbar-circle-selected {
-    background-color: blue;
+    background-color: #648d42;
 }
 
 .navbar-in-view {
@@ -255,14 +284,14 @@ body::-webkit-scrollbar {
 .question-header{
     text-align: center;
     width: 100%;
-    font-family: 'Merriweather', serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 32px;
     font-weight: bold;
 }
 
 .question-main{
     text-align: left;
-    font-family: 'Merriweather', serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: bold;
     padding: 12px 12px 0px 12px;
@@ -287,14 +316,14 @@ body::-webkit-scrollbar {
 .prelim-subtext{
     text-align: center;
     font-size: 16px;
-    font-family: 'Merriweather', serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     color: blue;
 }
 
 .prelim-question-sub{
     text-align: left;
-    font-family: 'Merriweather', serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 17px;
     font-weight: bold;
     padding: 0px 48px 0px 48px;
@@ -311,3 +340,16 @@ body::-webkit-scrollbar {
     font-size: 16px;
 }
 
+.waiver-signature{
+    padding: 48px 128px;
+}
+
+.waiver-body-text {
+    text-align: left;
+    font-size: 18px;
+    margin: 0px;
+    padding: 16px;
+    font-family: 'Roboto', sans-serif;
+    max-width: 70vw;
+    line-height: 28px;
+}

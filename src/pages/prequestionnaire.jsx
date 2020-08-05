@@ -111,6 +111,13 @@ class Prequestionnaire extends Component{
             <ul className="prelim-question-sub"/>
             <div><Selector/></div>
         </div>
+        <div className='odd'>
+            <div className='question-main'>
+                <div className="inline-text">10) Do you currently have income or any other financial resources that would allow you to afford hiring a private attorney?</div> 
+            </div>         
+            <ul className="prelim-question-sub"/>
+            <div><Selector/></div>
+        </div>
       </div>
   );
   }

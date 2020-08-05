@@ -24,3 +24,4 @@ backend/.vagrant
 
 frontend/node_modules
 node_modules
+src/data/firebase.js

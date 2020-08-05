@@ -6,7 +6,10 @@ import Questionnaire from '../pages/questionnaire';
 import Login from '../pages/login';
 import dashboard from '../pages/dashboard';
 import NewUser from '../pages/newUser';
+import Release from '../pages/release';
 import Prequestionnaire from '../pages/prequestionnaire';
+import Terms from '../pages/terms';
+import App from '../pages/application'
 
 import {AuthContext} from './authContext'
 
@@ -32,7 +35,17 @@ export const routes = [
     {
       path: "/application",
       label: "Application",
-      component: dashboard
+      component: App
+    },
+    {
+      path: "/release",
+      label: "Release",
+      component: Release
+    },
+    {
+      path: "/terms",
+      label: "Terms",
+      component: Terms
     }
   ]
 
@@ -52,7 +65,12 @@ export const headerRoutes = [
     path: '/',
     label: 'Info',
     component: Info
-  }
+  },
+  {
+    path: '/application',
+    label: 'Apply Now!',
+    component: dashboard
+  },
   ]
 
   const PrivateRoute = ({ component: Dashboard, ...rest }) => {

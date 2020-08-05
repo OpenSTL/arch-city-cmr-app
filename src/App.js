@@ -6,7 +6,7 @@ import {
   Redirect
 } from "react-router-dom";
 
-import { AuthProvider } from './data/authContext';
+// import { AuthProvider } from './data/authContext';
 import {routes} from './data/routes'
 
 // Page components:
@@ -26,13 +26,15 @@ export default function App() {
 
   return (
     <div className='app'>
-      <AuthProvider>
+      {/* <AuthProvider> */}
       <Router>
-
+        <section>
         <Header/>
+        </section>
 
         <ScrollToTop />
 
+        <section>
         <Switch>
           {routes.map((route) => (
             <Route 
@@ -47,11 +49,9 @@ export default function App() {
           />
           <Route component={NoMatch} />
         </Switch>
-
-        <Footer/>
-        
+        </section>
       </Router>
-      </AuthProvider>
+      {/* </AuthProvider> */}
     </div>
   );
 }
