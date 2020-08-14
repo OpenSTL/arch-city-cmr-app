@@ -40,7 +40,8 @@ export const steps = [
     navName: 'Eligibility',
     headerText: 'Can My Record Be Expunged?',
     bodyText: 
-    `<p>Records relating to some offenses can never be expunged. Ineligible crimes include: Class A felonies, dangerous felonies, offenses that require you to register as a sex offender, and any crime where death is an element. For the full list of ineligible offenses, violations, and infractions, see section 2 of RSMo 610.140</p>
+    ``<h3>After reviewing the information below, you are encouraged to submit an application to this program if you believe you are eligible or if you have doubt about your eligibility.</h3>
+     <p>Records relating to some offenses can never be expunged. Ineligible crimes include: Class A felonies, dangerous felonies, offenses that require you to register as a sex offender, and any crime where death is an element. For the full list of ineligible offenses, violations, and infractions, see section 2 of § 610.140 RSMo</p>
      
      <p>A certain amount of time must pass after the successful completion of all requirements of the sentence, including payment of restitution, times relating to prison, jail, parole, probation, etc.
      <ul><li>If your case involved a felony offense, you must wait seven years</li>
@@ -52,9 +53,9 @@ export const steps = [
      <li>If you are applying to expunge a misdemeanor record, the last three years</li>
      <li>If you are applying to expunge a municipal record, the last three years</li></ul></p>
 
-     <p>You may have only one felony and two misdemeanor records expunged in a lifetime. </p>
+     <p>You may have only one felony and two misdemeanor records expunged in a lifetime. This limit for misdemeanor records only relate to misdemeanor offenses that have an authorized term of imprisonment </p>
 
-     <p>The court determines that your habits and behavior show that you are not a threat to public safety.</p>
+     <p>Finally, to be granted expungement, the judge must come to the conclusion that you do not pose a threat to the public safety, that granting your expungement is consistent with the public welfare, and that granting your expungement is in the interest of justice</p>
 
     `,
   },
@@ -69,32 +70,23 @@ export const steps = [
     navName: 'Information',
     headerText: 'What Information Will I Need?',
     bodyText: 
-    `<h3>To start the expungment petition you will need to gather some personal information.</h3>
+    `<h3>To start the expungment petition you will need to gather some personal information, however, you are encouraged to submit an application to this program even if you are unable to provide all of the information listed below.</h3>
     <h3>Personal Information:</h3>
-    <p><ul><li>First and last name</li>
-    <li>Sex</li>
-    <li>Race</li>
+    <p><ul><li>Full name, sex, and race</li>
     <li>Driver's license number (if applicable)</li>
     <li>Current address</li></ul></p>
 
-    <h3>Criminal Information:</h3>
-    <p><ul><li>Name of each crime you want expunged</li>
-    <li>Date each crime occurred</li>
-    <li>Name of county and/or municipality crime occurred in</li>
-    <li>Case number for each crime</li>
-    <li>Name of court your crime was heard in</li></ul></p>
-    
+    <h3>Information about the Criminal Record:</h3>
+    <p><ul><li>Name, description, or statute / ordinance number of each criminal record you want expunged</li>
+    <li>Dates relevant to the criminal record(s), e.g. when arrested and/or convicted</li>
+    <li>Name of the county and/or municipality arrest or conviction occurred in</li>
+    <li>Case number for each crime</li></ul></p>
+        
     <h3>Court, Police, and Attorney Information (Where Applicable):</h3>
-    <p><ul><li>The circuit court division for your case</li>
-    <li>The associative court division for your case</li>
-    <li>The municipal court division for your case</li>
-    <li>The criminal records repository contact for your case</li>
-    <li>The county sheriff's department for your case</li>
-    <li>The municipal police department for your case</li>
-    <li>The Missouri highway patrol troop for your case</li>
-    <li>The country prosecutor's office for your case</li>
-    <li>The municipal prosecutor's office for your case</li></ul></p>
-    `,
+    <p><ul><li>The court division for your case</li>
+    <li>The police department for your case</li>
+    <li>The prosecutor attorney for your case</li></ul></p>
+       `,
   },
   { 
     navName: 'Apply!',
