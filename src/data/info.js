@@ -40,7 +40,7 @@ export const steps = [
     navName: 'Eligibility',
     headerText: 'Can My Record Be Expunged?',
     bodyText: 
-    ``<h3>After reviewing the information below, you are encouraged to submit an application to this program if you believe you are eligible or if you have doubt about your eligibility.</h3>
+    `<h3>After reviewing the information below, you are encouraged to submit an application to this program if you believe you are eligible or if you have doubt about your eligibility.</h3>
      <p>Records relating to some offenses can never be expunged. Ineligible crimes include: Class A felonies, dangerous felonies, offenses that require you to register as a sex offender, and any crime where death is an element. For the full list of ineligible offenses, violations, and infractions, see section 2 of § 610.140 RSMo</p>
      
      <p>A certain amount of time must pass after the successful completion of all requirements of the sentence, including payment of restitution, times relating to prison, jail, parole, probation, etc.
@@ -72,9 +72,9 @@ export const steps = [
     bodyText: 
     `<h3>To start the expungment petition you will need to gather some personal information, however, you are encouraged to submit an application to this program even if you are unable to provide all of the information listed below.</h3>
     <h3>Personal Information:</h3>
-    <p><ul><li>Full name, sex, and race </li>
-    <li>Driver's license number (if applicable) </li>
-    <li>Current address </li></ul></p>
+    <p><ul><li>Full name, sex, and race</li>
+    <li>Driver's license number (if applicable)</li>
+    <li>Current address</li></ul></p>
 
     <h3>Information about the Criminal Record:</h3>
     <p><ul><li>Name, description, or statute / ordinance number of each criminal record you want expunged</li>
