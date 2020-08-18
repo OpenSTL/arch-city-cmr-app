@@ -72,9 +72,9 @@ export const steps = [
     bodyText: 
     `<h3>To start the expungment petition you will need to gather some personal information, however, you are encouraged to submit an application to this program even if you are unable to provide all of the information listed below.</h3>
     <h3>Personal Information:</h3>
-    <p><ul><li>Full name, sex, and race</li>
-    <li>Driver's license number (if applicable)</li>
-    <li>Current address</li></ul></p>
+    <p><ul><li>Full name, sex, and race </li>
+    <li>Driver's license number (if applicable) </li>
+    <li>Current address </li></ul></p>
 
     <h3>Information about the Criminal Record:</h3>
     <p><ul><li>Name, description, or statute / ordinance number of each criminal record you want expunged</li>
