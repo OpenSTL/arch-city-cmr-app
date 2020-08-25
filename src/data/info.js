@@ -79,13 +79,8 @@ export const steps = [
     <h3>Information about the Criminal Record:</h3>
     <p><ul><li>Name, description, or statute / ordinance number of each criminal record you want expunged</li>
     <li>Dates relevant to the criminal record(s), e.g. when arrested and/or convicted</li>
-    <li>Name of the county and/or municipality arrest or conviction occurred in</li>
+    <li>Name of the county and/or municipality where the arrest or conviction occurred in</li>
     <li>Case number for each crime</li></ul></p>
-        
-    <h3>Court, Police, and Attorney Information (Where Applicable):</h3>
-    <p><ul><li>The court division for your case</li>
-    <li>The police department for your case</li>
-    <li>The prosecutor attorney for your case</li></ul></p>
        `,
   },
   { 
