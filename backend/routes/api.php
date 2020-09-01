@@ -45,3 +45,4 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::apiResource('assignments', 'API\StatusController');
 
 });
+

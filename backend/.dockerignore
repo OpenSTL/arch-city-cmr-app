@@ -2,9 +2,7 @@
 ./.idea
 ./node_modules
 ./vendor
-./sttorage/logs/**
-./storage/oauth-private.key
-./storage/oauth-public.key
+./storage/logs/**
 *.dockerfile
 ./app.yaml
 ./app.yaml.flex
