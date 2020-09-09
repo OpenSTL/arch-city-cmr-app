@@ -32,7 +32,7 @@ class Questionnaire extends Component{
       nonusRecords.push(<RecordComponent key={i} number={i} />);
     };
 
-
+    console.log(seekingRecords)
 
     return (
       <div className='content'>

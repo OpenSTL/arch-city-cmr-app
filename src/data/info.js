@@ -83,15 +83,15 @@ export const steps = [
     <li>Case number for each crime</li></ul></p>
        `,
   },
-  { 
-    navName: 'Apply!',
-    headerText: 'Apply to the Program!',
-    bodyText: 
-    // <p>Once you have gathered enough information, you can create your petition. You can get a copy of the petition (add link here) to print and fill out, or you can fill it out online and print it. When your petition is complete take it to an expungement clinit or expungement center. You can find a list of these (another link to add here).</p>
-    `
-    <p>button goes here </p>
-    `,
-  },
+  // { 
+  //   navName: 'Apply!',
+  //   headerText: 'Apply to the Program!',
+  //   bodyText: 
+  //   // <p>Once you have gathered enough information, you can create your petition. You can get a copy of the petition (add link here) to print and fill out, or you can fill it out online and print it. When your petition is complete take it to an expungement clinit or expungement center. You can find a list of these (another link to add here).</p>
+  //   `
+  //   <p>button goes here </p>
+  //   `,
+  // },
   /*{ 
     navName: 'People You Need',
     headerText: 'Who Can Help Me?',

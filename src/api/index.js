@@ -6,11 +6,11 @@ import { headers, url } from './util';
  * @param {String} token
  * @returns {Promise<Number>} new applicant id 
  */
-export const createApplicant = async (applicant, token) => {
+export const createApplicant = async (applicant) => {
     const response = await fetch(url('applicants/add'), {
         body: JSON.stringify(applicant),
         method: 'POST',
-        ...headers(token),
+        ...headers(process.env.REACT_APP_API_TOKEN),
     });
     return response.json();
 };

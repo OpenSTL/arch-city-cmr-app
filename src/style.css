@@ -6,7 +6,7 @@
   --acd-green: #648d42;
   --acd-blue: #083350;
   --acd-gray: #ebebeb;
-  
+
 }
 
 html, body, div { padding: 0px; margin: 0px; }
@@ -32,6 +32,7 @@ h5 { font-size: 16px; }
 body{
     background-color: #ffffff;
     overflow: overlay;
+    overflow-x: hidden;
     min-height: 100vh;
 }
 
@@ -97,7 +98,7 @@ body::-webkit-scrollbar {
 }
 
 .footer  { 
-    background-color: rgb(14, 33, 44);
+    background-color: var(--acd-green);
     width:100%;
     color: #ffffff;
     padding: 16px;

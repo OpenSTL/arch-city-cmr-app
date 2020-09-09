@@ -8,8 +8,11 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 import Release from '../pages/release';
+import Prequestionnaire from '../pages/prequestionnaire';
 import Questionnaire from '../pages/questionnaire';
 import Terms from '../pages/terms';
+
+import { createApplicant } from '../api/index'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,18 +27,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function getSteps() {
-  return ['Release Form', 'Terms of Service', 'Questionnaire'];
+const getSteps = () => {
+  return ['Release Form', 'Terms of Service', 'Preliminary Questions', 'Questionnaire'];
 }
 
-function getStepContent(stepIndex) {
+const getStepContent = (stepIndex) => {
   switch (stepIndex) {
     case 0:
       return <Release/>;
     case 1:
       return <Terms/>;
     case 2:
-      return <Questionnaire/> ;
+      return <Prequestionnaire/> ;
+    case 3:
+      return <Questionnaire/>
     default:
       return 'Unknown stepIndex';
   }
@@ -56,8 +61,10 @@ const App = () => {
     };  
     
     const handleFinish = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1);
-        window.scrollTo(0, 0);
+      
+
+      setActiveStep((prevActiveStep) => prevActiveStep - 1);
+      window.scrollTo(0, 0);
     }; 
     
     const handleReset = () => {

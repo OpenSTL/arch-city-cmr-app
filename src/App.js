@@ -50,6 +50,7 @@ export default function App() {
           <Route component={NoMatch} />
         </Switch>
         </section>
+        <Footer/>
       </Router>
       {/* </AuthProvider> */}
     </div>
