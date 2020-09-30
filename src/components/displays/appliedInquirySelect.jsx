@@ -4,11 +4,13 @@ import {KeyboardDatePicker,MuiPickersUtilsProvider} from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 import Grid from '@material-ui/core/Grid';
 
-export default function AppliedInquiryComponent() {
+export default function AppliedInquiryComponent(props) {
     
     const [inquiry, setRecordType] = React.useState('');
     const handleInquiry = (event) => {
         setRecordType(event.target.value);
+        {props.type == 'MO' ? (props.values.deniedMO.response = event.target.value) : (props.values.deniedOutside.response = event.target.value)}
+        console.log(props.values)
     }
 
     return (
@@ -26,7 +28,7 @@ export default function AppliedInquiryComponent() {
                 </MenuItem>
             </Select>
             <div>
-                {inquiry ?  (<ContinueInquiry/>) : (<div></div>)}
+                {inquiry ?  (<ContinueInquiry {...props}/>) : (<div></div>)}
             </div>
         </div>
     
@@ -34,16 +36,18 @@ export default function AppliedInquiryComponent() {
     );
 }
 
-function ContinueInquiry(){
+function ContinueInquiry(props){
     const [selectedDate, setSelectedDate] = React.useState(new Date());
 
     const handleDateChange = (date) => {
       setSelectedDate(date);
+      {props.type == 'MO' ? (props.values.deniedMO.date = date) : (props.values.deniedOutside.date = date)}
     };
 
     const [inquiry, setRecordType] = React.useState('');
     const handleInquiry = (event) => {
         setRecordType(event.target.value);
+        {props.type == 'MO' ? (props.values.deniedMO.docs = event.target.value) : (props.values.deniedOutside.docs = event.target.value)}
     }
     return(
         <div style={{padding: 8}}>
@@ -85,6 +89,9 @@ function ContinueInquiry(){
                 <Grid item xs = {4}>
                     <div>Charge (if known)</div>
                     <TextField 
+                        onChange={(event) => {
+                            {props.type == 'MO' ? (props.values.deniedMO.charge = event.target.value) : (props.values.deniedOutside.charge = event.target.value)}
+                        }}
                         variant="outlined"
                         style={{background: "white"}}/>
                 </Grid>
@@ -95,6 +102,10 @@ function ContinueInquiry(){
                         variant="outlined"
                         multiline
                         rowsMax={6}
+                        onChange={(event) => {
+                            {props.type == 'MO' ? (props.values.deniedMO.details = event.target.value) : (props.values.deniedOutside.details = event.target.value)}
+                            console.log(props.values)
+                        }}
                         fullWidth/>
                 </Grid>
 

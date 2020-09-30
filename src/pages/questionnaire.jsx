@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Formik, Form, Field, FieldArray } from 'formik';
 import { Button } from '@material-ui/core';
 import RecordComponent from '../components/displays/qRecordType';
 import AppliedInquiryComponent from '../components/displays/appliedInquirySelect';
@@ -6,143 +7,247 @@ import GrantedInquiryComponent from '../components/displays/grantedInquirySelect
 
 
 class Questionnaire extends Component{
-  state = {
-    numSeekingRecords: 0,
-    numStlRecords: 0,
-    numMissouriRecords: 0,
-    numUSRecords: 0,
-    numNonUSRecords: 0
-  }
 
   render(){
-    const seekingRecords = [],stlRecords=[],missouriRecords=[],usRecords=[],nonusRecords=[];
-    for (let i = 0; i < this.state.numSeekingRecords+1; i += 1){
-      seekingRecords.push(<RecordComponent key={i} number={i} />);
-    };
-    for (let i = 0; i < this.state.numStlRecords; i += 1){
-      stlRecords.push(<RecordComponent key={i} number={i} />);
-    };
-    for (let i = 0; i < this.state.numMissouriRecords; i += 1){
-      missouriRecords.push(<RecordComponent key={i} number={i} />);
-    };
-    for (let i = 0; i < this.state.numUSRecords; i += 1){
-      usRecords.push(<RecordComponent key={i} number={i} />);
-    };
-    for (let i = 0; i < this.state.numNonUSRecords; i += 1){
-      nonusRecords.push(<RecordComponent key={i} number={i} />);
-    };
-
-    console.log(seekingRecords)
-
+    
     return (
-      <div className='content'>
-        <div className='odd'>
-          <div className='question-header-box'>
-            <div className='question-header'>
-              Expungement Clinic: 
+      <Formik
+        onSubmit={values => console.log(values)}
+        initialValues={{ seekingRecords: [],
+                         grantedMO: [],
+                         deniedMO: [],
+                         grantedOutside: [],
+                         deniedOutside: [],
+                         stlRecords: [],
+                         missouriRecords: [],
+                         usRecords: [],
+                         nonusRecords: [] 
+                      }}
+        render={({ values, setFieldValue }) => (
+          <div className='content'>
+            <div className='odd'>
+              <div className='question-header-box'>
+                <div className='question-header'>
+                  Expungement Clinic: 
+                </div>
+                <div className='question-header'> 
+                  Information for Record Inquiry
+                </div>
+              </div>
             </div>
-            <div className='question-header'> 
-              Information for Record Inquiry
-            </div>
+            <Form>
+              <FieldArray
+                name='seekingRecords'
+                render={arrayhelpers => (
+                  <div className='even'>
+                    <div className='question-main'>
+                      1) What criminal records are you seeking to have expunged?
+                    </div>
+                    {values.seekingRecords.map((data, i) => (
+                      <RecordComponent
+                        setFieldValue={setFieldValue}
+                        arrayhelpers={arrayhelpers}
+                        data={data}
+                        values={values}
+                        key={i}
+                        index={i}
+                        type='0'
+                      />
+                    ))}
+                    <div>
+                      <Button variant='contained'
+                        fullWidth='false'
+                        onClick={() => {arrayhelpers.push({
+                          recordType: '',
+                          jurisdiction: '',
+                          details: '',
+                          arrestDate: '',
+                          convictionDate: '',
+                          completedSentence: '',
+                        })
+                        console.log(values.seekingRecords)}}>
+                          {values.seekingRecords && values.seekingRecords.length == 0 ? ("Add Record") : ("Add Another Record")}
+                      </Button>
+                    </div>
+                  </div>
+                )}
+              />
+              
+              <div className='odd'>
+                <div className='question-main'>
+                  2) Have you ever been granted an expungement in Missouri?
+                </div>
+                <div>
+                  <GrantedInquiryComponent values={values} type='MO'/>
+                </div>
+              </div>
+              <div className='even'>
+                <div className='question-main'>
+                  3) Have you ever applied for an expungement in Missouri that was not granted by the court?
+                </div>
+                <div>
+                  <AppliedInquiryComponent values={values} type='MO'/>
+                </div>
+              </div>
+              <div className='odd'>
+                <div className='question-main'>
+                  4) Have you ever been granted an expungement anywhere other than Missouri?
+                </div>
+                <div>
+                  <GrantedInquiryComponent values={values} type='OUT'/>
+                </div>
+              </div>
+              <div className='even'>
+                <div className='question-main'>
+                  5) Have you ever applied for an expungement anywhere other than Missouri that was not granted by the court?
+                </div>
+                <div>
+                  <AppliedInquiryComponent values={values} type='OUT'/>
+                </div>
+              </div>
+              <div className='odd'>
+                <div className='question-main'>
+                  6) Please list any known records (Including charges/tickets that are completed, sealed, or pending) in:
+                </div>
+                <FieldArray
+                  name='stlRecords'
+                  render={arrayhelpers => (
+                    <div>
+                      <div className='question-main'>a) St. Louis Region</div>
+                      {values.stlRecords.map((data, i) => (
+                        <RecordComponent
+                        arrayhelpers={arrayhelpers}
+                        data={data}
+                        values={values}
+                        key={i}
+                        index={i}
+                        type='1'
+                      />
+                      )) }
+                      <div>
+                        <Button variant='contained'
+                          fullWidth='false'
+                          onClick={() => {arrayhelpers.push({
+                            recordType: '',
+                            jurisdiction: '',
+                            details: '',
+                            arrestDate: '',
+                            convictionDate: '',
+                            completedSentence: '',
+                          })
+                          console.log(values)}}>
+                            {values.stlRecords && values.stlRecords.length == 0 ? ("Add Record") : ("Add Another Record")}
+                        </Button>
+                      </div>
+                    </div>
+                  )} 
+                />
+                <FieldArray
+                  name='missouriRecords'
+                  render={arrayhelpers => (
+                    <div>
+                        <div className='question-main'>b) Missouri (excluding St. Louis Region)</div>
+                        {values.missouriRecords.map((data, i) => (
+                          <RecordComponent
+                          arrayhelpers={arrayhelpers}
+                          data={data}
+                          values={values}
+                          key={i}
+                          index={i}
+                          type='2'
+                          />
+                        )) }
+                        <div>
+                          <Button variant='contained'
+                            fullWidth='false'
+                            onClick={() => {arrayhelpers.push({
+                              recordType: '',
+                              jurisdiction: '',
+                              details: '',
+                              arrestDate: '',
+                              convictionDate: '',
+                              completedSentence: '',
+                            })
+                            console.log(values)}}>
+                              {values.missouriRecords && values.missouriRecords.length == 0 ? ("Add Record") : ("Add Another Record")}
+                          </Button>
+                        </div>
+                    </div>
+                  )}
+                />
+                <FieldArray
+                  name='usRecords'
+                  render={arrayhelpers => (
+                    <div>
+                      <div className='question-main'>c) United States (excluding Missouri)</div>
+                      {values.usRecords.map((data, i) => (
+                          <RecordComponent
+                          arrayhelpers={arrayhelpers}
+                          data={data}
+                          values={values}
+                          key={i}
+                          index={i}
+                          type='3'
+                          />
+                        )) }
+                      <div>
+                        <Button variant='contained'
+                          fullWidth='false'
+                          onClick={() => {arrayhelpers.push({
+                            recordType: '',
+                            jurisdiction: '',
+                            details: '',
+                            arrestDate: '',
+                            convictionDate: '',
+                            completedSentence: '',
+                          })
+                          console.log(values)}}>
+                            {values.usRecords && values.usRecords.length == 0 ? ("Add Record") : ("Add Another Record")}
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+                />
+                <FieldArray
+                  name='nonusRecords'
+                  render={arrayhelpers => (
+                    <div>
+                      <div className='question-main'>d) Outside of United States</div>
+                      {values.nonusRecords.map((data, i) => (
+                          <RecordComponent
+                          arrayhelpers={arrayhelpers}
+                          data={data}
+                          values={values}
+                          key={i}
+                          index={i}
+                          type='4'
+                          />
+                        )) }
+                      <div>
+                        <Button variant='contained'
+                          fullWidth='false'
+                          onClick={() => {arrayhelpers.push({
+                            recordType: '',
+                            jurisdiction: '',
+                            details: '',
+                            arrestDate: '',
+                            convictionDate: '',
+                            completedSentence: '',
+                          })
+                          console.log(values)}}>
+                            {values.nonusRecords && values.nonusRecords.length == 0 ? ("Add Record") : ("Add Another Record")}
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+                />
+                
+              </div>
+            </Form>
           </div>
-        </div>
-        <div className='even'>
-          <div className='question-main'>
-            1) What criminal records are you seeking to have expunged?
-          </div>
-          <div>
-            {seekingRecords}
-          </div>
-          <div>
-            <Button variant='contained'
-              fullWidth='false'
-              onClick={() => this.setState({numSeekingRecords: this.state.numSeekingRecords + 1})}>
-                Add Another Record
-            </Button>
-          </div>
-        </div>
-        <div className='odd'>
-          <div className='question-main'>
-            2) Have you ever been granted an expungement in Missouri?
-          </div>
-          <div>
-            <GrantedInquiryComponent/>
-          </div>
-        </div>
-        <div className='even'>
-          <div className='question-main'>
-            3) Have you ever applied for an expungement in Missouri that was not granted by the court?
-          </div>
-          <div>
-            <AppliedInquiryComponent/>
-          </div>
-        </div>
-        <div className='odd'>
-          <div className='question-main'>
-            4) Have you ever been granted an expungement anywhere other than Missouri?
-          </div>
-          <div>
-            <GrantedInquiryComponent/>
-          </div>
-        </div>
-        <div className='even'>
-          <div className='question-main'>
-            5) Have you ever applied for an expungement anywhere other than Missouri that was not granted by the court?
-          </div>
-          <div>
-            <AppliedInquiryComponent/>
-          </div>
-        </div>
-        <div className='odd'>
-          <div className='question-main'>
-            6) Please list any known records (Including charges/tickets that are completed, sealed, or pending) in:
-          </div>
-          <div className='question-main'>a) St. Louis Region</div>
-          <div>
-            {stlRecords}
-          </div>
-          <div>
-            <Button variant='contained'
-              fullWidth='false'
-              onClick={() => this.setState({numStlRecords: this.state.numStlRecords + 1})}>
-                Add Another Record
-            </Button>
-          </div>
-          <div className='question-main'>b) Missouri (excluding St. Louis Region)</div>
-          <div>
-            {missouriRecords}
-          </div>
-          <div>
-            <Button variant='contained'
-              fullWidth='false'
-              onClick={() => this.setState({numMissouriRecords: this.state.numMissouriRecords + 1})}>
-                Add Another Record
-            </Button>
-          </div>
-          <div className='question-main'>c) United States (excluding Missouri)</div>
-          <div>
-            {usRecords}
-          </div>
-          <div>
-            <Button variant='contained'
-              fullWidth='false'
-              onClick={() => this.setState({numUSRecords: this.state.numUSRecords + 1})}>
-                Add Another Record
-            </Button>
-          </div>
-          <div className='question-main'>d) Outside of United States</div>
-          <div>
-            {nonusRecords}
-          </div>
-          <div>
-            <Button variant='contained'
-              fullWidth='false'
-              onClick={() => this.setState({numNonUSRecords: this.state.numNonUSRecords + 1})}>
-                Add Another Record
-            </Button>
-          </div>
-        </div>
-      </div>
+        )}
+      />
+      
   );
   }
   onAddRecord = () => {

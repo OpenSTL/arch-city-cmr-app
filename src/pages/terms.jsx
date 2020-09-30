@@ -1,4 +1,5 @@
 import React from 'react'
+import { Formik, Field } from 'formik';
 import TermsInformation from '../components/displays/termsInfo';
 import Grid from '@material-ui/core/Grid';
 import {TextField} from '@material-ui/core';
@@ -19,6 +20,7 @@ export default function Release() {
     };
 
     return (
+        
         <div className='content'>
            <div className='question-header-box'>
                 <h3 className='question-header'>
@@ -48,7 +50,8 @@ export default function Release() {
                                     style={{background: "white"}}
                                     variant="outlined"
                                     rowsMax={1}
-                                    fullWidth/>
+                                    fullWidth
+                                    onChange/>
                                 <b>Signature - To apply your signature electronically, type /s/ and your full name, e.g. /s/ Jane Marie Brown.</b>
                             </Grid>
                             <Grid item xs={12}>

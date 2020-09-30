@@ -31,6 +31,11 @@ const getSteps = () => {
   return ['Release Form', 'Terms of Service', 'Preliminary Questions', 'Questionnaire'];
 }
 
+let data = [];
+const handleSubmit = (value) => {
+  data.push(value)
+}
+
 const getStepContent = (stepIndex) => {
   switch (stepIndex) {
     case 0:
@@ -51,6 +56,7 @@ const App = () => {
     const steps = getSteps();
 
     const handleNext = () => {
+        
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
         window.scrollTo(0, 0);
       };

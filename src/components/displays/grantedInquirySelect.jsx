@@ -1,11 +1,12 @@
 import React from 'react';
 import { Select, MenuItem} from '@material-ui/core';
 
-export default function GrantedInquiryComponent() {
-    
+export default function GrantedInquiryComponent(props) {
     const [inquiry, setRecordType] = React.useState('');
     const handleInquiry = (event) => {
         setRecordType(event.target.value);
+        {props.type == 'MO' ? (props.values.grantedMO.response = event.target.value) : (props.values.grantedOutside.response = event.target.value)}
+        console.log(props.values)
     }
 
     return (
@@ -23,7 +24,7 @@ export default function GrantedInquiryComponent() {
                 </MenuItem>
             </Select>
             <div>
-                {inquiry ?  (<ContinueInquiry/>) : (<div></div>)}
+                {inquiry ?  (<ContinueInquiry {...props}/>) : (<div></div>)}
             </div>
         </div>
     
@@ -31,11 +32,14 @@ export default function GrantedInquiryComponent() {
     );
 }
 
-function ContinueInquiry(){
+function ContinueInquiry(props){
     
     const [inquiry, setRecordType] = React.useState('');
     const handleInquiry = (event) => {
         setRecordType(event.target.value);
+        {props.type == 'MO' ? (props.values.grantedMO.answer = event.target.value) : (props.values.grantedOutside.answer = event.target.value)}
+        console.log(props.values)
+        
     }
     
     return(
