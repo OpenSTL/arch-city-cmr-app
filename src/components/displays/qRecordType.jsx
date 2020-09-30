@@ -175,7 +175,7 @@ function ArrestOnly(props){
                 <Grid item xs={4}>
                     <div>Date of Arrest (if known)</div>
                     <Field
-                    component={KeyboardDatePicker}
+                    component={KeyboardDatePicker} 
                     name='arrestDate'
                     disableToolbar
                     variant="inline"

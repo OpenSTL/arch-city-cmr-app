@@ -51,7 +51,9 @@ export default function Release() {
                                     variant="outlined"
                                     rowsMax={1}
                                     fullWidth
-                                    onChange/>
+                                    onChange={() => {
+                                        
+                                    }}/>
                                 <b>Signature - To apply your signature electronically, type /s/ and your full name, e.g. /s/ Jane Marie Brown.</b>
                             </Grid>
                             <Grid item xs={12}>
